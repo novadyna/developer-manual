@@ -1,0 +1,6 @@
+#jetbrains
+/.idea/
+# mkdocs build directory
+/site/
+
+/*.bat

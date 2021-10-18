@@ -1,0 +1,14 @@
+{
+  "name": "nova-documentation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "deploy": "mkdocs build --clean && copy /Y .\\docs\\img\\favicon.ico .\\site\\img\\favicon.ico && aws s3 sync ./site s3://nova-documentation --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --exclude \"*.bat\" --delete --profile nwv2Admin"
+  },
+  "author": "",
+  "license": "ISC"
+}
