@@ -1,5 +1,3 @@
 # Nova Documentation
 
 ---
-
-Hello world!
