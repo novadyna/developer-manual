@@ -4,6 +4,8 @@ nav:
   - Introduction:
       Domains: intro/domains.md
       Repositories: intro/repos.md
+  - Deployment Procedures(Backend):
+      Prerequisites: deployment/prerequisites.md
 
 use_directory_urls: false
 
