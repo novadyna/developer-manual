@@ -1,4 +1,4 @@
-# Nova Documentation
+# Nova Developer Manual
 
 ---
 
