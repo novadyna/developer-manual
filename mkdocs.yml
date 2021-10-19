@@ -1,6 +1,9 @@
 site_name: Nova Documentation
 nav:
   - Home: index.md
+  - Introduction:
+      Domains: intro/domains.md
+      Repositories: intro/repos.md
 
 use_directory_urls: false
 
