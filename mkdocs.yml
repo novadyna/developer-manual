@@ -6,6 +6,7 @@ nav:
       Repositories: intro/repos.md
   - Deployment Procedures(Backend):
       Prerequisites: deployment/prerequisites.md
+      Deployment: deployment/deployment.md
 
 use_directory_urls: false
 
