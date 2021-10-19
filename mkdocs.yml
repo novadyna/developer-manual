@@ -11,7 +11,6 @@ nav:
 use_directory_urls: false
 
 site_author: Li Gangwei
-theme: ivory
 
 markdown_extensions:
   - attr_list
