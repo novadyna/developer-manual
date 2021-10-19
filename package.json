@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "deploy": "mkdocs build --clean && copy /Y .\\docs\\img\\favicon.ico .\\site\\img\\favicon.ico && aws s3 sync ./site s3://nova-documentation --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers --exclude \"*.bat\" --delete --profile nwv2Admin"
+    "start": "mkdocs serve",
+    "build": "mkdocs build --clean"
   },
   "author": "",
   "license": "ISC"
