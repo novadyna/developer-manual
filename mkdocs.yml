@@ -13,7 +13,7 @@ use_directory_urls: false
 
 site_author: Li Gangwei, Louis Lor
 site_dir: public
-site_url: https://nova35.gitlab.io/developer-manual
+site_url: https://nova35.gitlab.io/novaweb/v2/developer-manual
 
 markdown_extensions:
   - attr_list
