@@ -12,6 +12,7 @@ nav:
       FAQs: deployment/faqs.md
   - Backend:
       Introduction to the Serverless Framework: backend/serverless-intro.md
+      Introduction to the Nova Codebase(Backend): backend/codebase-intro.md
 
 use_directory_urls: false
 
