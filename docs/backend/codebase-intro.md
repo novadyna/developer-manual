@@ -232,5 +232,13 @@ export class DDBClient {
 }
 ```
 
-Needless to say, readability is very low without intimate knowledge of how `AWS-SDK` works, and the
-syntax of a `DynamoDB` operation and is out of the scope of this manual.
+Needless to say, readability is very low without intimate knowledge of how `AWS-SDK` works and the
+syntax of a `DynamoDB` operation.
+
+These topics are out of the scope of this manual.
+
+Official references:
+
+[AWS JS SDK](https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html){target=_blank}
+
+[DynamoDB Expressions](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.html){target=_blank}
