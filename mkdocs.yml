@@ -8,6 +8,8 @@ nav:
       Prerequisites: deployment/prerequisites.md
       Deployment: deployment/deployment.md
       FAQs: deployment/faqs.md
+  - Backend:
+      Introduction to the Serverless Framework: backend/serverless-intro.md
 
 use_directory_urls: false
 
