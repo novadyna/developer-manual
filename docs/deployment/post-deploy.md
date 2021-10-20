@@ -90,10 +90,14 @@ Run:
 npm run-script setup-root-admin
 ```
 
+Ensure it ran without errors.
+
 And then run:
 
 ```shell
 npm run-script init-default-templates
 ```
+
+Again, ensure there are no errors.
 
 That's it!
