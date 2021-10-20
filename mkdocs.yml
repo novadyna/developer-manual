@@ -7,6 +7,7 @@ nav:
   - Deployment Procedures(Backend):
       Prerequisites: deployment/prerequisites.md
       Deployment: deployment/deployment.md
+      Post Deploy Setup: deployment/post-deploy.md
       FAQs: deployment/faqs.md
   - Backend:
       Introduction to the Serverless Framework: backend/serverless-intro.md
