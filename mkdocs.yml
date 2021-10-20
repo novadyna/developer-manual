@@ -4,6 +4,7 @@ nav:
   - Introduction:
       Domains: intro/domains.md
       Repositories: intro/repos.md
+      Migrating Repositories: intro/repo-migration.md
   - Deployment Procedures(Backend):
       Prerequisites: deployment/prerequisites.md
       Deployment: deployment/deployment.md
