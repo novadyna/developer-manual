@@ -14,6 +14,8 @@ Backend API (API Gateway stacks managed with [Serverless Framework](https://www.
     - Creating and modifying `channels`, `events`, `sessions`, and other platform resources.
 - `nwv2-api-analytics`
     - What the name suggests
+    - This project contains references to AWS resources not deployed by the CDK
+        - See [Deployment](../deployment/deployment.md) section for details.
 - `nwv2-api-event-interaction`
     - APIs pertaining to interactive elements of an event:
         - Polls, Q&As, Surveys, anything that involves end users submitting things. 
