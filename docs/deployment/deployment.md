@@ -4,7 +4,8 @@
 
 ### Get Ready
 
-Before we begin, ensure that you've obtained a copy of the ENV variables required for all API stacks.
+Before we begin, ensure that you've obtained a copy of the ENV variables required for all API
+stacks.
 
 They are named as such:
 
@@ -28,8 +29,8 @@ And they are:
 
 They need to be deployed first, in no particular order.
 
-The reason for that is they contain declarations to 2 authorizer functions that are imported and used
-in almost all other stacks.
+The reason for that is they contain declarations to 2 authorizer functions that are imported and
+used in almost all other stacks.
 
 Relevant excerpts from `nwv2-api-admin-iam`'s `serverless.yml`:
 
@@ -47,8 +48,8 @@ Change directory into the project root, run:
 npm install
 ```
 
-After which an npm `postinstall` script will be automatically triggered, the scripts simply goes into
-a submodule's folder and run install from within, and then run a TypeScript transpiler.
+After which an npm `postinstall` script will be automatically triggered, the scripts simply goes
+into a submodule's folder and run install from within, and then run a TypeScript transpiler.
 
 Make sure both env files are placed under project root.
 
@@ -114,8 +115,8 @@ Rinse and repeat.
 Although you should be able to deploy all 7 API stacks successfully just by doing the above, there's
 one caveat.
 
-Our analytics stack `nwv2-api-analytics` contains references to AWS resources created neither
-by the CDK nor the Serverless Stacks.
+Our analytics stack `nwv2-api-analytics` contains references to AWS resources created neither by the
+CDK nor the Serverless Stacks.
 
 The resources being referred to are:
 
@@ -127,9 +128,17 @@ The resources being referred to are:
     - DynamoDB (Gateway endpoint)
     - S3 (Gateway endpoint)
     - SQS (Interface endpoint)
-    
+
 Relevant excerpt:
 
 ![Screenshot](../assets/redis-yml.png){: style="height:auto;width:auto"}
 
 ![Screenshot](../assets/vpc-yml.png){: style="height:auto;width:auto"}
+
+The hard coded IDs reference existing resources, which, should not cause a problem if you're
+deploying to the same AWS account.
+
+They are by design shared between stacks anyway.
+
+In any case this should be refactored out. Either by extracting into an env file, or move resource
+declaration into the CDK project.
