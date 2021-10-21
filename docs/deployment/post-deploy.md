@@ -61,6 +61,7 @@ Stage=
 AWS_PROFILE=mwv2Admin
 AWS_REGION=ap-southeast-1
 AdminTable=
+ViewerHostname=
 ```
 
 `Stage` would be the name of your stage.
@@ -69,7 +70,9 @@ something like this:
 
 `novaweb-<STAGE>-AdminTable`
 
-Or you can also obtain the value from the regular `.env.<STAGE>.json` file.
+`ViewerHostname` is the full URL for the event viewer site.
+
+You can obtain all of those values from the regular `.env.<STAGE>.json` file.
 
 ### Actual Setup
 
