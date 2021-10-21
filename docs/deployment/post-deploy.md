@@ -35,7 +35,7 @@ Paste this into the file:
 
 ```txt
 Stage=
-AWS_PROFILE=mwv2Admin
+AWS_PROFILE=nwv2Admin
 AWS_REGION=ap-southeast-1
 BucketName=
 UserImportBucket=
@@ -58,7 +58,7 @@ You don't need all of the values for this to work, just these:
 
 ```txt
 Stage=
-AWS_PROFILE=mwv2Admin
+AWS_PROFILE=nwv2Admin
 AWS_REGION=ap-southeast-1
 AdminTable=
 ViewerHostname=
