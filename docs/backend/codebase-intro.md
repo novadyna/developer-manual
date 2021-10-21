@@ -25,7 +25,7 @@ They are:
     - Lower level
     - Calls third party sdks, mainly integrates with AWS resources.
 
-#### Business Level
+### Business Level
 
 Example of a business level function:
 
@@ -66,7 +66,7 @@ programmers.
 
 It is because this is solely declarative, written in plain English, with little to no black magic.
 
-#### Facade Level
+### Facade Level
 
 A simplified excerpt of the `StorageFacade` that was introduced earlier.
 
@@ -87,7 +87,7 @@ export default class StorageFacade {
 
 Still relatively readable.
 
-#### Storage Level
+### Storage Level
 
 A simplified excerpt of `AdminStorage` that both the `login` function and `StorageFacade` uses.
 
@@ -136,7 +136,7 @@ It is not recommended for newcomers to immediately start creating or modifying a
 
 A separate entry will be written on our data structure and DynamoDB fundamentals.  
 
-#### Integration
+### Integration
 
 These classes deal with integration with AWS/other 3rd party services.
 
