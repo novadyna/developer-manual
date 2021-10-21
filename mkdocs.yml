@@ -13,6 +13,8 @@ nav:
   - Backend:
       Introduction to the Serverless Framework: backend/serverless-intro.md
       Introduction to the Nova Codebase(Backend): backend/codebase-intro.md
+      Data Deep Dive:
+        DynamoDB Basics: backend/deepdive/dynamo-basics.md
 
 use_directory_urls: false
 
