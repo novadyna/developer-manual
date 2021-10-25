@@ -160,6 +160,45 @@ In which case you'd get:
 *Caveat: Since recordKey is a `string` attribute, ASCII sort is employed, meaning"
 Session#2022-10-10" would be sorted before "Session#2022-10-2".*
 
+### [Secondary Indices](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/SecondaryIndexes.html){target=_blank}
 
+Secondary indices in DynamoDB are copies of the data grouped and sorted by attributes different to
+main table.
 
+Let's look at this example:
 
+```json
+[
+  {
+    "userId": "user-001",
+    "recordKey": "Profile",
+    "timestamp": 12345
+  },
+  {
+    "userId": "user-002",
+    "recordKey": "Profile",
+    "timestamp": 23456
+  },
+  {
+    "userId": "user-003",
+    "recordKey": "Profile",
+    "timestamp": 34567
+  }
+]
+```
+
+You'd like to query for a list of profile objects, but you want only the ones created after a
+certain time.
+
+Normally you can't, since you can only query by `HASH` key, in this case, `userId`.
+
+With secondary indices you can.
+
+All that is required is a secondary index created for the table with `recordKey` as `HASH`
+and `timestamp` as `SORT`. After which you may perform queries on the index just as you would on the
+main table.
+
+One thing of notes is that, `HASH` `SORT` combinations on a secondary index are not unique, meaning
+there may exist more than 1 records with the same `recordKey` plus `timestamp`.
+
+This is also why you cannot perform single get operations on indices.
