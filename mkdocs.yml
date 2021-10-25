@@ -5,12 +5,12 @@ nav:
       Domains: intro/domains.md
       Repositories: intro/repos.md
       Migrating Repositories: intro/repo-migration.md
-  - Deployment Procedures(Backend):
-      Prerequisites: deployment/prerequisites.md
-      Deployment: deployment/deployment.md
-      Post Deploy Setup: deployment/post-deploy.md
-      FAQs: deployment/faqs.md
   - Backend:
+      Deployment Procedures(Backend):
+        Prerequisites: deployment/prerequisites.md
+        Deployment: deployment/deployment.md
+        Post Deploy Setup: deployment/post-deploy.md
+        FAQs: deployment/faqs.md
       Introduction to the Serverless Framework: backend/serverless-intro.md
       Introduction to the Nova Codebase(Backend): backend/codebase-intro.md
       Data Deep Dive:
