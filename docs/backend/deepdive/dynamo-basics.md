@@ -202,3 +202,7 @@ One thing of notes is that, `HASH` `SORT` combinations on a secondary index are 
 there may exist more than 1 records with the same `recordKey` plus `timestamp`.
 
 This is also why you cannot perform single get operations on indices.
+
+### References
+
+[This](https://www.dynamodbguide.com/){target=_blank} is another excellent guide on DynamoDB.
