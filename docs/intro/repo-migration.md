@@ -8,7 +8,7 @@ Submodules.
 
 If you are familiar with them. You can safely skip this article.
 
-[What is a git submodule?](../deployment/faqs.md)
+[What is a git submodule?](../backend/deployment/faqs.md)
 
 A git submodule is declared inside a file named `.gitmodules` in the root folder.
 

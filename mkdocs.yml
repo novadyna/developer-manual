@@ -7,10 +7,10 @@ nav:
       Migrating Repositories: intro/repo-migration.md
   - Backend:
       Deployment Procedures(Backend):
-        Prerequisites: deployment/prerequisites.md
-        Deployment: deployment/deployment.md
-        Post Deploy Setup: deployment/post-deploy.md
-        FAQs: deployment/faqs.md
+        Prerequisites: backend/deployment/prerequisites.md
+        Deployment: backend/deployment/deployment.md
+        Post Deploy Setup: backend/deployment/post-deploy.md
+        FAQs: backend/deployment/faqs.md
       Introduction to the Serverless Framework: backend/serverless-intro.md
       Introduction to the Nova Codebase(Backend): backend/codebase-intro.md
       Data Deep Dive:

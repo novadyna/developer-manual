@@ -14,9 +14,9 @@ They are named as such:
 
 And they look somewhat like this:
 
-![Screenshot](../assets/env-sample.png){: style="height:auto;width:auto"}
+![Screenshot](../../assets/env-sample.png){: style="height:auto;width:auto"}
 
-![Screenshot](../assets/secret-sample.png){: style="height:auto;width:auto"}
+![Screenshot](../../assets/secret-sample.png){: style="height:auto;width:auto"}
 
 ### Deployment Order
 
@@ -34,9 +34,9 @@ used in almost all other stacks.
 
 Relevant excerpts from `nwv2-api-admin-iam`'s `serverless.yml`:
 
-![Screenshot](../assets/authorizer-declaration-1.png){: style="height:auto;width:auto"}
+![Screenshot](../../assets/authorizer-declaration-1.png){: style="height:auto;width:auto"}
 
-![Screenshot](../assets/authorizer-declaration-2.png){: style="height:auto;width:auto"}
+![Screenshot](../../assets/authorizer-declaration-2.png){: style="height:auto;width:auto"}
 
 ### Deploy
 
@@ -85,7 +85,7 @@ If any of these variables are not provided, the following defaults will be used 
 
 Relevant excerpt:
 
-![Screenshot](../assets/default-stage-variables.png){: style="height:auto;width:auto"}
+![Screenshot](../../assets/default-stage-variables.png){: style="height:auto;width:auto"}
 
 Example output from a successful deployment:
 
@@ -131,9 +131,9 @@ The resources being referred to are:
 
 Relevant excerpt:
 
-![Screenshot](../assets/redis-yml.png){: style="height:auto;width:auto"}
+![Screenshot](../../assets/redis-yml.png){: style="height:auto;width:auto"}
 
-![Screenshot](../assets/vpc-yml.png){: style="height:auto;width:auto"}
+![Screenshot](../../assets/vpc-yml.png){: style="height:auto;width:auto"}
 
 The hard coded IDs reference existing resources, which, should not cause a problem if you're
 deploying to the same AWS account.

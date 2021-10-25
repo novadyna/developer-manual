@@ -18,7 +18,7 @@ API Gateway stacks managed with [Serverless Framework](https://www.serverless.co
 - `nwv2-api-analytics`
     - What the name suggests
     - This project contains references to AWS resources not deployed by the CDK
-        - See [Deployment](../deployment/deployment.md) section for details.
+        - See [Deployment](../backend/deployment/deployment.md) section for details.
     - <https://gitlab.com/yellowvls/project/nova/nwv2-api-analytics>
 - `nwv2-api-message-queue`
     - Asynchronous batch processing that involves lambda fan-outs with SQS

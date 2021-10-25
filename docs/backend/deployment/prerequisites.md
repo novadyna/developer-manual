@@ -17,7 +17,7 @@ aws sts get-caller-identity --profile nwv2Admin
 
 You should get a response similar to this one:
 
-![Screenshot](../assets/cli-sts-response.png){: style="height:100px;width:auto"}
+![Screenshot](../../assets/cli-sts-response.png){: style="height:100px;width:auto"}
 
 ### Node
 
