@@ -10,7 +10,7 @@ All of Novaweb's online platforms are placed under this domain:
 
 There are a total of six sites:
 
-Production Environment
+Production Environment (latest stable)
 
 - admin-panel: `console.novaweb.live`
 - event-viewer: `events.novaweb.live`
