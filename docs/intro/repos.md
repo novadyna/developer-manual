@@ -22,7 +22,7 @@ API Gateway stacks managed with [Serverless Framework](https://www.serverless.co
     - <https://gitlab.com/yellowvls/project/nova/nwv2-api-analytics>
 - `nwv2-api-message-queue`
     - Asynchronous batch processing that involves lambda fan-outs with SQS
-    - <https://gitlab.com/yellowvls/project/nova/nwv2-api-message-queue>
+    - <https://gitlab.com/yellowvls/project/nova/nwv2-api-msg-queue>
 - `nwv2-api-event-interaction`
     - APIs pertaining to interactive elements of an event:
         - Polls, Q&As, Surveys, anything that involves end users submitting things. 
@@ -37,7 +37,7 @@ API Gateway stacks managed with [Serverless Framework](https://www.serverless.co
     - The server side rendering part of Novaweb platform
     - Extremely convoluted, very hard to read even with intimate knowledge of business logic.
     - Consult Louis.
-    - <https://gitlab.com/yellowvls/project/nova/nwv2-api-viewer-events>
+    - <https://gitlab.com/yellowvls/project/nova/nwv2-api-viewer-event>
 - `nwv2-api-lib`
     - Submodule shared by the other API repos
     - <https://gitlab.com/yellowvls/project/nova/nwv2-api-lib>
