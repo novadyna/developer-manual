@@ -16,6 +16,13 @@ nav:
       Data Deep Dive:
         DynamoDB Basics: backend/deepdive/dynamo-basics.md
         Nova's Data Structure: backend/deepdive/data-structure.md
+  - Frontend:
+      Prerequisites: frontend/prerequisites.md
+      Admin Panel: frontend/admin-panel.md
+      Event Viewer: frontend/event-viewer.md
+      Extensions:
+        Poll: frontend/extension-poll.md
+        Survey: frontend/extension-survey.md
 
 use_directory_urls: false
 
