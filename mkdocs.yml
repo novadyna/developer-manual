@@ -16,6 +16,8 @@ nav:
       Data Deep Dive:
         DynamoDB Basics: backend/deepdive/dynamo-basics.md
         Nova's Data Structure: backend/deepdive/data-structure.md
+        Data Schema: backend/deepdive/data-schema.md
+        Storage Classes: backend/deepdive/storage-classes.md
   - Frontend:
       Prerequisites: frontend/prerequisites.md
       Admin Panel: frontend/admin-panel.md
