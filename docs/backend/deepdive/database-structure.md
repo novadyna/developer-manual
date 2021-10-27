@@ -1,10 +1,10 @@
-## Nova's Data Structure
+## Nova's Database Structure
 
 ---
 
 ### [Single Table Design](https://aws.amazon.com/blogs/compute/creating-a-single-table-design-with-amazon-dynamodb/){target=_blank}
 
-Nova's data structure is problematic in its current state.
+Nova's database structure is problematic in its current state.
 
 Below is our most common DynamoDB setup(in cloudformation syntax, simplified):
 

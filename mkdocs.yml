@@ -15,7 +15,7 @@ nav:
       Introduction to the Nova Codebase(Backend): backend/codebase-intro.md
       Data Deep Dive:
         DynamoDB Basics: backend/deepdive/dynamo-basics.md
-        Nova's Data Structure: backend/deepdive/data-structure.md
+        Nova's Database Structure: backend/deepdive/database-structure.md
         Data Schema: backend/deepdive/data-schema.md
         Storage Classes: backend/deepdive/storage-classes.md
   - Frontend:
