@@ -28,6 +28,7 @@ nav:
   - Deployment Environments:
       Introduction: environments/intro.md
       Deployment Procedures(Environments): environments/deployment.md
+      Deployment QOL: environments/qol.md
 
 use_directory_urls: false
 
