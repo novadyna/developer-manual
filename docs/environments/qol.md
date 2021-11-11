@@ -48,3 +48,59 @@ it do its job.
 
 Deployments are also done from their respective branch, therefore `sandbox` and `prod` deployments
 should to an extent be idempotent.
+
+### Recommended shell Scripts to Have
+
+Even with the help of Jenkins, managing 11 git repositories is still somewhat a cognitively
+demanding operation. Therefore, it is recommended to have a number of local bash scripts that can
+help with your everyday tasks.
+
+- Copies env files from server
+    - Our envs are stored on the jenkins instance, if you have ssh access, you can conveniently copy
+      them to your local environment with `scp`
+    - example(all examples are in batch(windows)):
+
+```bat
+echo off
+
+scp <server_domain>:~/nova-env/.env.*.json ./
+scp <server_domain>:~/nova-env/.secrets.*.json ./
+
+for /D %%i in ("*") do (
+	xcopy .env.*.json %~dp0\%%i\ /Y
+	xcopy .secrets.*.json %~dp0\%%i\ /Y
+)
+
+pause
+```
+
+- Merge current `master` to `sandbox`
+    - This will be done about once a week, so it's immensely helpful if you don't need to merge and
+      push all 11 projects manually
+    - Example: (in batch)
+
+```bat
+echo off
+
+for /D %%i in ("*") do (
+	cd %~dp0%%i
+	call git switch master --recurse-submodules --discard-changes
+	call git pull --ff-only
+	call git submodule update --init --recursive
+	call git switch sandbox --recurse-submodules --discard-changes
+	call git merge master --ff-only
+	call git push
+	call git switch master --recurse-submodules --discard-changes
+)
+
+pause
+```
+
+- Merge current `sandbox` to `prod`
+    - This one goes without saying
+
+- Update all submodules to the latest
+    - This is not done very frequently, usually submodule\ versions are managed per projects, since
+      every project is usually on a different submodule version, but on the rare occasions that you
+      made substantial updates to the submodule and is updating submodules for all api projects
+      frequently(a couple times a day), this is immensely helpful. 
