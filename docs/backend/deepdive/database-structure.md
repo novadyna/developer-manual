@@ -104,7 +104,7 @@ sk: Event#Profile (Remember sk is the HASH key for gsi-index?)
 gsi1sk: "=" 355dada4-fb99-4bd9-801f-bea92cd03a1d
 ```
 
-There's a lot of cognitively overhead just to remember the index name, the `HASH` key for that
+There's a lot of cognitive overhead just to remember the index name, the `HASH` key for that
 index, and that `channelId` was overloaded into `gsi1sk`.
 
 This is why one should almost never query the database directly with a single table design.
