@@ -25,6 +25,9 @@ nav:
       Extensions:
         Poll: frontend/extension-poll.md
         Survey: frontend/extension-survey.md
+  - Deployment Environments:
+      Introduction: environments/intro.md
+      Staging: environments
 
 use_directory_urls: false
 
