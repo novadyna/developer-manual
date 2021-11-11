@@ -27,7 +27,7 @@ nav:
         Survey: frontend/extension-survey.md
   - Deployment Environments:
       Introduction: environments/intro.md
-      Staging: environments
+      Deployment Procedures(Environments): environments/deployment.md
 
 use_directory_urls: false
 
