@@ -18,6 +18,8 @@ nav:
         Nova's Database Structure: backend/deepdive/database-structure.md
         Data Schema: backend/deepdive/data-schema.md
         Storage Classes: backend/deepdive/storage-classes.md
+      Analytics:
+        Intro: backend/analytics/intro.md
   - Frontend:
       Prerequisites: frontend/prerequisites.md
       Admin Panel: frontend/admin-panel.md
