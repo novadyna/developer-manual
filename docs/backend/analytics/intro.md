@@ -12,7 +12,7 @@ The heart of the analytics stack is the `heartbeat` function, its endpoint being
 analytics/events/{eventId}/heartbeat
 ```
 
-This collects and logs whatever is required. 
+This collects and logs whatever is required.
 
 ### Current Issues
 
@@ -22,5 +22,7 @@ They are:
 
 - A redis instance endpoint
 - A VPC with VPCEndpoints for DynamoDB, S3 and SQS
+- 3 Subnets
 
-Compared to other preexisting architectural issues on our platform, this should be easy to remedy.
+However, compared to other preexisting architectural issues on our platform, this should be
+relatively easy to remedy.
