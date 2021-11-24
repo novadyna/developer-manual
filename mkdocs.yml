@@ -20,6 +20,7 @@ nav:
         Storage Classes: backend/deepdive/storage-classes.md
       Analytics:
         Intro: backend/analytics/intro.md
+        Heartbeats: backend/analytics/heartbeats.md
   - Frontend:
       Prerequisites: frontend/prerequisites.md
       Admin Panel: frontend/admin-panel.md
