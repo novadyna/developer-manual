@@ -44,9 +44,31 @@ ZCOUNT with +inf for max and T minus alive threshold for min.
     - Key: UserId
     - Score: Timestamp
 
+There are 2 more sorted sets that are being used, and these require a little more explanation. They
+are the statistics sets. There's one that's scoped to events and another scoped to sessions.
+
+Being a sorted set, members can only have a key field and an associated numerical score.
+
+The score is the current timestamp, while the key is an encoded string containing the user's ID, IP
+address they're access the site from together with country code, user groups they're members of.
+
+- User Event Stats
+    - Grouped by EventId
+    - Key: UserId
+    - Score: Timestamp
+- User Session Stats
+    - Grouped by SessionId
+    - Key: <USERID>#<IPADDRESS>#(one or more <USERGROUPID>)#<COUNTRYCODE>
+    - Score: Timestamp
+
+These are poorly designed sets, and is the primary source of technical debt from inside the
+analytics stack.
+
 #### Sets
 
-Unique members, supports add, rmv, check for existence in O(1)
+Unique members, supports add, rmv, check for existence in O(1).
+
+These 2 are for recording who has logged in at least once.
 
 - Event User Attendance
     - Grouped by EventId
@@ -54,9 +76,3 @@ Unique members, supports add, rmv, check for existence in O(1)
 - Session User Attendance
     - Grouped by SessionId
     - Key: UserId
-
-### What does it do?
-
-1. Loads a user's profile from DB, immediately cache it.
-    - DB or Redis Read x 1
-2. Load
