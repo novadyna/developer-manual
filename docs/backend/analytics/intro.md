@@ -6,7 +6,7 @@ This is the stack that makes extensive use of the redis instance.
 
 ### The Basics
 
-The heart of the analytics stack is the `heartbeat` function, its endpoint being:
+At the heart of the analytics stack is the `heartbeat` function, its endpoint being:
 
 ```txt
 analytics/events/{eventId}/heartbeat
