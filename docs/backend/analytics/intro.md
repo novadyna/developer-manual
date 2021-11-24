@@ -2,7 +2,8 @@
 
 ---
 
-This is the stack that makes extensive use of the redis instance.
+This is the stack that makes extensive use of the redis instance, in order to reduce load on the
+DynamoDB tables, and decrease lambda runtime.
 
 ### The Basics
 
