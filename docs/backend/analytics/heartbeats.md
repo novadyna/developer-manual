@@ -17,7 +17,7 @@ And then perform operations that enable the following metrics.
 The Redis data sets that supports the following are detailed in the next chapter, these 2 chapters
 should be read in parallel.
 
-#### Viewing Sessions
+### Viewing Sessions
 
 A viewing session represent a continuous period of time a user spends on the platform. A user can
 have multiple viewing sessions.
@@ -32,7 +32,7 @@ have multiple viewing sessions.
     - Set their latest end time to now
     - Update a DB record
 
-#### Alive viewers count (Current viewing users)
+### Alive viewers count (Current viewing users)
 
 We consider viewers that submitted a heartbeat within the past 65 seconds "active".
 
@@ -41,12 +41,12 @@ Logs a heartbeat(with user id and timestamp only), to a redis sorted set.
 Logs another heartbeat to another set scoped to sessions if the url path indicates the viewer is
 watching a session.
 
-#### Attendance
+### Attendance
 
 At the same time we also logs the viewer's ID to a redis set. We can then obtain a count of viewers
 who has at least visited the platform once by issuing a cardinality command.
 
-#### Event Statistics
+### Event Statistics
 
 "Stats" is what we call an aggregated metric that involves viewer count grouped by user group and
 country, this is admittedly not the best name for it.
