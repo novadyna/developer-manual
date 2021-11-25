@@ -41,7 +41,9 @@ watching a session.
 #### Event Statistics
 
 "Stats" is what we call an aggregated metric that involves viewer count grouped by user group and
-country, and looks like this:
+country, this is admittedly not the best name for it.
+
+They look something like this:
 
 ```json
 {
@@ -59,7 +61,7 @@ country, and looks like this:
 }
 ```
 
-TODO:
+Each record represents a 5 minutes time frame(this will become clear in later chapters concerning aggregation).
 
 ### Redis Data
 
