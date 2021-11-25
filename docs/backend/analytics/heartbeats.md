@@ -35,6 +35,9 @@ We consider viewers that submitted a heartbeat within the past 65 seconds "activ
 
 Logs a heartbeat(with user id and timestamp only), to a redis sorted set.
 
+At the same time we also logs the viewer's ID to a redis set(similar to a JAVA HashSet, unique members,
+no ordering, O(1) get, put, check existence).
+
 Logs another heartbeat to another set scoped to sessions if the url path indicates the viewer is
 watching a session.
 
@@ -47,21 +50,20 @@ They look something like this:
 
 ```json
 {
-    "viewerCount": 100,
-    "timestamp": 1637661623070,
-    "countByUserGroup":
-    {
-        "047417b2-4930-4ff0-a3a0-8572cc559005": 100
-    },
-    "countByViewingCountry":
-    {
-        "HK": 50,
-        "US": 50
-    }
+  "viewerCount": 100,
+  "timestamp": 1637661623070,
+  "countByUserGroup": {
+    "047417b2-4930-4ff0-a3a0-8572cc559005": 100
+  },
+  "countByViewingCountry": {
+    "HK": 50,
+    "US": 50
+  }
 }
 ```
 
-Each record represents a 5 minutes time frame(this will become clear in later chapters concerning aggregation).
+Each record represents a 5 minutes time frame(this will become clear in later chapters concerning
+aggregation).
 
 ### Redis Data
 
