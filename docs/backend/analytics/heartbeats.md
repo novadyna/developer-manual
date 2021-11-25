@@ -35,8 +35,7 @@ We consider viewers that submitted a heartbeat within the past 65 seconds "activ
 
 Logs a heartbeat(with user id and timestamp only), to a redis sorted set.
 
-At the same time we also logs the viewer's ID to a redis set(similar to a JAVA HashSet, unique members,
-no ordering, O(1) get, put, check existence).
+At the same time we also logs the viewer's ID to a redis set.
 
 Logs another heartbeat to another set scoped to sessions if the url path indicates the viewer is
 watching a session.
