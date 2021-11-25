@@ -23,6 +23,7 @@ nav:
         Heartbeats: backend/analytics/heartbeats.md
         Redis Data Usage: backend/analytics/redis-data-usage.md
         Aggregation: backend/analytics/aggregation.md
+        Metrics: backend/analytics/metrics.md
   - Frontend:
       Prerequisites: frontend/prerequisites.md
       Admin Panel: frontend/admin-panel.md
