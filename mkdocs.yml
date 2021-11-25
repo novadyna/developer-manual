@@ -21,6 +21,7 @@ nav:
       Analytics:
         Intro: backend/analytics/intro.md
         Heartbeats: backend/analytics/heartbeats.md
+        Redis Data Usage: backend/analytics/redis-data-usage.md
   - Frontend:
       Prerequisites: frontend/prerequisites.md
       Admin Panel: frontend/admin-panel.md
