@@ -16,7 +16,7 @@ And they are:
 
 ### Pull the project
 
-Both of these things can be done with the `nwv2-dev-tools` project, so go pull it now.
+Both of these things can be done with the `nwv2-platform-init` project, so go pull it now.
 
 There's a submodule in it too, so please remember to initialize it.
 
@@ -24,7 +24,7 @@ Double check that `src/nwv2-api-lib` is not empty, and then we can move on to th
 
 ### Env variables
 
-The `nwv2-dev-tools` uses [dotenv](https://www.npmjs.com/package/dotenv){target=_blank}.
+The `nwv2-platform-init` uses [dotenv](https://www.npmjs.com/package/dotenv){target=_blank}.
 
 So the required env file is a key value pair instead of a `json`, and you'll need to create one
 yourself.
@@ -85,7 +85,7 @@ npm install
 
 After which the `postinstall` script should run.
 
-Make sure the necessary env values are filled in. 
+Make sure the necessary env values are filled in.
 
 Run:
 
