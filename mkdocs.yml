@@ -38,6 +38,7 @@ nav:
       Deployment QOL: environments/qol.md
   - Jenkins:
       Introduction: jenkins/intro.md
+      Managing Jenkins: jenkins/management.md
 
 use_directory_urls: false
 
