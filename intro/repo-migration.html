@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Li Gangwei, Louis Lor">
+        <link rel="canonical" href="https://nova35.gitlab.io/novaweb/v2/developer-manual/intro/repo-migration.html">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Migrating Repositories - Nova Developer Manual</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">Nova Developer Manual</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../index.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Introduction</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="domains.html" class="dropdown-item">Domains</a>
+</li>
+                                    
+<li>
+    <a href="repos.html" class="dropdown-item">Repositories</a>
+</li>
+                                    
+<li>
+    <a href="repo-migration.html" class="dropdown-item active" aria-current="page">Migrating Repositories</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Backend</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Deployment Procedures(Backend)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../backend/deployment/prerequisites.html" class="dropdown-item">Prerequisites</a>
+</li>
+            
+<li>
+    <a href="../backend/deployment/deployment.html" class="dropdown-item">Deployment</a>
+</li>
+            
+<li>
+    <a href="../backend/deployment/post-deploy.html" class="dropdown-item">Post Deploy Setup</a>
+</li>
+            
+<li>
+    <a href="../backend/deployment/faqs.html" class="dropdown-item">FAQs</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../backend/serverless-intro.html" class="dropdown-item">Introduction to the Serverless Framework</a>
+</li>
+                                    
+<li>
+    <a href="../backend/codebase-intro.html" class="dropdown-item">Introduction to the Nova Codebase(Backend)</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Data Deep Dive</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../backend/deepdive/dynamo-basics.html" class="dropdown-item">DynamoDB Basics</a>
+</li>
+            
+<li>
+    <a href="../backend/deepdive/database-structure.html" class="dropdown-item">Nova's Database Structure</a>
+</li>
+            
+<li>
+    <a href="../backend/deepdive/data-schema.html" class="dropdown-item">Data Schema</a>
+</li>
+            
+<li>
+    <a href="../backend/deepdive/storage-classes.html" class="dropdown-item">Storage Classes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Analytics</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../backend/analytics/intro.html" class="dropdown-item">Intro</a>
+</li>
+            
+<li>
+    <a href="../backend/analytics/heartbeats.html" class="dropdown-item">Heartbeats</a>
+</li>
+            
+<li>
+    <a href="../backend/analytics/redis-data-usage.html" class="dropdown-item">Redis Data Usage</a>
+</li>
+            
+<li>
+    <a href="../backend/analytics/aggregation.html" class="dropdown-item">Aggregation</a>
+</li>
+            
+<li>
+    <a href="../backend/analytics/metrics.html" class="dropdown-item">Metrics</a>
+</li>
+            
+<li>
+    <a href="../backend/analytics/issues.html" class="dropdown-item">Issues</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Frontend</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../frontend/prerequisites.html" class="dropdown-item">Prerequisites</a>
+</li>
+                                    
+<li>
+    <a href="../frontend/admin-panel.html" class="dropdown-item">Admin Panel</a>
+</li>
+                                    
+<li>
+    <a href="../frontend/event-viewer.html" class="dropdown-item">Event Viewer</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Extensions</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../frontend/extension-poll.html" class="dropdown-item">Poll</a>
+</li>
+            
+<li>
+    <a href="../frontend/extension-survey.html" class="dropdown-item">Survey</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Deployment Environments</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../environments/intro.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../environments/deployment.html" class="dropdown-item">Deployment Procedures(Environments)</a>
+</li>
+                                    
+<li>
+    <a href="../environments/qol.html" class="dropdown-item">Deployment QOL</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Jenkins</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../jenkins/intro.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../jenkins/management.html" class="dropdown-item">Managing Jenkins</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="repos.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../backend/deployment/prerequisites.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#migrating-repositories" class="nav-link">Migrating Repositories</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="migrating-repositories">Migrating Repositories</h2>
+<hr />
+<p>Migrating repos should be relatively painless, with one very important caveat.</p>
+<p>Submodules.</p>
+<p>If you are familiar with them. You can safely skip this article.</p>
+<p><a href="../backend/deployment/faqs.html">What is a git submodule?</a></p>
+<p>A git submodule is declared inside a file named <code>.gitmodules</code> in the root folder.</p>
+<p>This file is committed and is tracked by git.</p>
+<p>The insides looks like this:</p>
+<pre><code class="language-txt">[submodule &quot;functions/lib/nwv2-api-lib&quot;]
+    path = functions/lib/nwv2-api-lib
+    url = ../nwv2-api-lib.git
+</code></pre>
+<p>The url param can take a relative path or a full path, some of the projects uses an absolute path, some relative.</p>
+<p>An absolute path would look like this:</p>
+<pre><code class="language-txt">[submodule &quot;functions/lib/nwv2-api-lib&quot;]
+    path = functions/lib/nwv2-api-lib
+    url = git@gitlab.com:yellowvls/project/nova/nwv2-api-lib.git
+</code></pre>
+<p>You can probably imagine, if the library module is migrated, it will stop working, since the path would become incorrect.</p>
+<p>It also probably wouldn't work if you use <code>http</code> instead of <code>git</code> protocol for fetching.</p>
+<p>So in most cases, a relative path is recommended, unless the submodule is hosted on a different server.</p>
+<p>As for relative paths, if the library module is not placed under a path with the same relativity, it won't work either.</p>
+<p>So during migration, care should be taken to ensure submodules remain in the same location relative to their parent.</p>
+<p>And that absolute submodule paths are updated to reflect the migration.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

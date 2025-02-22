@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Li Gangwei, Louis Lor">
+        <link rel="canonical" href="https://nova35.gitlab.io/novaweb/v2/developer-manual/intro/repos.html">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Repositories - Nova Developer Manual</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">Nova Developer Manual</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../index.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Introduction</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="domains.html" class="dropdown-item">Domains</a>
+</li>
+                                    
+<li>
+    <a href="repos.html" class="dropdown-item active" aria-current="page">Repositories</a>
+</li>
+                                    
+<li>
+    <a href="repo-migration.html" class="dropdown-item">Migrating Repositories</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Backend</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Deployment Procedures(Backend)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../backend/deployment/prerequisites.html" class="dropdown-item">Prerequisites</a>
+</li>
+            
+<li>
+    <a href="../backend/deployment/deployment.html" class="dropdown-item">Deployment</a>
+</li>
+            
+<li>
+    <a href="../backend/deployment/post-deploy.html" class="dropdown-item">Post Deploy Setup</a>
+</li>
+            
+<li>
+    <a href="../backend/deployment/faqs.html" class="dropdown-item">FAQs</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="../backend/serverless-intro.html" class="dropdown-item">Introduction to the Serverless Framework</a>
+</li>
+                                    
+<li>
+    <a href="../backend/codebase-intro.html" class="dropdown-item">Introduction to the Nova Codebase(Backend)</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Data Deep Dive</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../backend/deepdive/dynamo-basics.html" class="dropdown-item">DynamoDB Basics</a>
+</li>
+            
+<li>
+    <a href="../backend/deepdive/database-structure.html" class="dropdown-item">Nova's Database Structure</a>
+</li>
+            
+<li>
+    <a href="../backend/deepdive/data-schema.html" class="dropdown-item">Data Schema</a>
+</li>
+            
+<li>
+    <a href="../backend/deepdive/storage-classes.html" class="dropdown-item">Storage Classes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Analytics</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../backend/analytics/intro.html" class="dropdown-item">Intro</a>
+</li>
+            
+<li>
+    <a href="../backend/analytics/heartbeats.html" class="dropdown-item">Heartbeats</a>
+</li>
+            
+<li>
+    <a href="../backend/analytics/redis-data-usage.html" class="dropdown-item">Redis Data Usage</a>
+</li>
+            
+<li>
+    <a href="../backend/analytics/aggregation.html" class="dropdown-item">Aggregation</a>
+</li>
+            
+<li>
+    <a href="../backend/analytics/metrics.html" class="dropdown-item">Metrics</a>
+</li>
+            
+<li>
+    <a href="../backend/analytics/issues.html" class="dropdown-item">Issues</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Frontend</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../frontend/prerequisites.html" class="dropdown-item">Prerequisites</a>
+</li>
+                                    
+<li>
+    <a href="../frontend/admin-panel.html" class="dropdown-item">Admin Panel</a>
+</li>
+                                    
+<li>
+    <a href="../frontend/event-viewer.html" class="dropdown-item">Event Viewer</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Extensions</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../frontend/extension-poll.html" class="dropdown-item">Poll</a>
+</li>
+            
+<li>
+    <a href="../frontend/extension-survey.html" class="dropdown-item">Survey</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Deployment Environments</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../environments/intro.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../environments/deployment.html" class="dropdown-item">Deployment Procedures(Environments)</a>
+</li>
+                                    
+<li>
+    <a href="../environments/qol.html" class="dropdown-item">Deployment QOL</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Jenkins</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../jenkins/intro.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../jenkins/management.html" class="dropdown-item">Managing Jenkins</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="domains.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="repo-migration.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#repositories" class="nav-link">Repositories</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="repositories">Repositories</h2>
+<hr />
+<h4 id="backend-api">Backend API</h4>
+<p>API Gateway stacks managed with <a href="https://www.serverless.com/framework/docs" target="_blank">Serverless Framework</a></p>
+<ul>
+<li><code>nwv2-api-admin-iam</code><ul>
+<li>Serverless stack</li>
+<li>Admin authentications</li>
+<li>Contains authorizer shared by other admin stacks</li>
+<li><strong>MUST BE DEPLOYED FIRST!</strong></li>
+<li><a href="https://gitlab.com/nova35/novaweb/v2/api/nwv2-api-admin">https://gitlab.com/nova35/novaweb/v2/api/nwv2-api-admin</a></li>
+</ul>
+</li>
+<li><code>nwv2-api-admin</code><ul>
+<li>Core admin APIs</li>
+<li>Creating and modifying <code>channels</code>, <code>events</code>, <code>sessions</code>, and other platform resources.</li>
+<li><a href="https://gitlab.com/nova35/novaweb/v2/api/nwv2-api-admin">https://gitlab.com/nova35/novaweb/v2/api/nwv2-api-admin</a></li>
+</ul>
+</li>
+<li><code>nwv2-api-analytics</code><ul>
+<li>What the name suggests</li>
+<li>This project contains references to AWS resources not deployed by the CDK<ul>
+<li>See <a href="../backend/deployment/deployment.html">Deployment</a> section for details.</li>
+</ul>
+</li>
+<li><a href="https://gitlab.com/nova35/novaweb/v2/api/nwv2-api-analytics">https://gitlab.com/nova35/novaweb/v2/api/nwv2-api-analytics</a></li>
+</ul>
+</li>
+<li><code>nwv2-api-message-queue</code><ul>
+<li>Asynchronous batch processing that involves lambda fan-outs with SQS</li>
+<li><a href="https://gitlab.com/nova35/novaweb/v2/api/nwv2-api-msg-queue">https://gitlab.com/nova35/novaweb/v2/api/nwv2-api-msg-queue</a></li>
+</ul>
+</li>
+<li><code>nwv2-api-event-interaction</code><ul>
+<li>APIs pertaining to interactive elements of an event:<ul>
+<li>Polls, Q&amp;As, Surveys, anything that involves end users submitting things. </li>
+</ul>
+</li>
+<li><a href="https://gitlab.com/nova35/novaweb/v2/api/nwv2-api-event-interaction">https://gitlab.com/nova35/novaweb/v2/api/nwv2-api-event-interaction</a></li>
+</ul>
+</li>
+<li><code>nwv2-api-viewer-auth</code><ul>
+<li>Viewer authentications</li>
+<li>Contains authorizer shared by other viewer stacks</li>
+<li><strong>MUST BE DEPLOYED FIRST!</strong><ul>
+<li>Either before or after <code>nwv2-api-admin-iam</code> </li>
+</ul>
+</li>
+<li><a href="https://gitlab.com/nova35/novaweb/v2/api/nwv2-api-viewer-auth">https://gitlab.com/nova35/novaweb/v2/api/nwv2-api-viewer-auth</a></li>
+</ul>
+</li>
+<li><code>nwv2-api-viewer-events</code><ul>
+<li>The server side rendering part of Novaweb platform</li>
+<li>Extremely convoluted, very hard to read even with intimate knowledge of business logic.</li>
+<li>Consult Louis.</li>
+<li><a href="https://gitlab.com/nova35/novaweb/v2/api/nwv2-api-viewer-event">https://gitlab.com/nova35/novaweb/v2/api/nwv2-api-viewer-event</a></li>
+</ul>
+</li>
+<li><code>nwv2-api-lib</code><ul>
+<li>Submodule shared by the other API repos</li>
+<li><a href="https://gitlab.com/nova35/novaweb/v2/api/nwv2-api-lib">https://gitlab.com/nova35/novaweb/v2/api/nwv2-api-lib</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="front-end-clients">Front-end Clients</h4>
+<p>All client projects are using <a href="https://vuejs.org/" target="_blank">VueJS</a> Framework and <a href="https://bootstrap-vue.org/" target="_blank">BootstrapVue</a>.</p>
+<ul>
+<li><code>nwv2-client-admin-panel</code><ul>
+<li>Administrative Panel (a.k.a Console) and Mission Control</li>
+<li>VueJS, Vue-Bootstrap</li>
+<li><a href="https://gitlab.com/nova35/novaweb/v2/sites/nwv2-client-admin-panel">https://gitlab.com/nova35/novaweb/v2/sites/nwv2-client-admin-panel</a></li>
+</ul>
+</li>
+<li><code>nwv2-client-event-viewer</code><ul>
+<li>Event Viewer</li>
+<li>VueJS</li>
+<li><a href="https://gitlab.com/nova35/novaweb/v2/sites/nwv2-client-event-viewer">https://gitlab.com/nova35/novaweb/v2/sites/nwv2-client-event-viewer</a></li>
+</ul>
+</li>
+<li><code>nwv2-client-extension-poll</code><ul>
+<li>Poll Client</li>
+<li>VueJS, Vue-Bootstrap</li>
+<li><a href="https://gitlab.com/nova35/novaweb/v2/sites/nwv2-client-extension-poll">https://gitlab.com/nova35/novaweb/v2/sites/nwv2-client-extension-poll</a></li>
+</ul>
+</li>
+<li><code>nwv2-client-extension-survey</code><ul>
+<li>Survey Client</li>
+<li>VueJS, Vue-Bootstrap</li>
+<li><a href="https://gitlab.com/nova35/novaweb/v2/sites/nwv2-client-extension-survey">https://gitlab.com/nova35/novaweb/v2/sites/nwv2-client-extension-survey</a></li>
+</ul>
+</li>
+<li><code>nwv2-client-lib</code><ul>
+<li>Submodule shared by the other Client repos</li>
+<li><a href="https://gitlab.com/nova35/novaweb/v2/sites/nwv2-client-lib">https://gitlab.com/nova35/novaweb/v2/sites/nwv2-client-lib</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="utility-repos">Utility Repos</h4>
+<ul>
+<li><code>nwv2cdk</code><ul>
+<li>The installer of novaweb</li>
+<li>It contains main script to launch the novaweb main stack, its fundamental infrastructure and resources on AWS, uses AWS Cloud Development Kit (CDK)</li>
+<li><a href="https://gitlab.com/nova35/novaweb/v2/nwv2-cdk">https://gitlab.com/nova35/novaweb/v2/nwv2-cdk</a></li>
+</ul>
+</li>
+<li><code>nwv2-dev-tools</code><ul>
+<li>Connect to AWS resources from your local computer<ul>
+<li>With the exception of some EC2 resources like Redis, which can only be connected to from VPC</li>
+</ul>
+</li>
+<li>Suitable for quick tests and debugging without having to deploy code to a Lambda Function</li>
+<li><a href="https://gitlab.com/nova35/novaweb/v2/utilities/nwv2-dev-tools">https://gitlab.com/nova35/novaweb/v2/utilities/nwv2-dev-tools</a></li>
+</ul>
+</li>
+<li><code>novaweb-jmeter</code><ul>
+<li>Automated API tests that ensures platform functionalities are up and running.</li>
+<li>High but not 100% coverage, especially newer features.</li>
+<li>Also contains scripts for stress testing purposes.</li>
+<li><a href="https://gitlab.com/nova35/novaweb/v2/utilities/nwv2-jmeter-integration-tests">https://gitlab.com/nova35/novaweb/v2/utilities/nwv2-jmeter-integration-tests</a></li>
+</ul>
+</li>
+<li><code>nwv2-platform-init</code><ul>
+<li>Contains scripts that initializes a newly deployed platform, mainly:<ul>
+<li>Initializes the console with a root admin user.</li>
+<li>Copies default html templates into the database.</li>
+</ul>
+</li>
+<li><a href="https://gitlab.com/nova35/novaweb/v2/utilities/nwv2-platform-init">https://gitlab.com/nova35/novaweb/v2/utilities/nwv2-platform-init</a></li>
+</ul>
+</li>
+<li><code>developer-manual</code><ul>
+<li>Source files of this documentation site</li>
+<li>Uses Markdown and MkDocs</li>
+<li><a href="https://gitlab.com/nova35/novaweb/v2/developer-manual">https://gitlab.com/nova35/novaweb/v2/developer-manual</a></li>
+</ul>
+</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

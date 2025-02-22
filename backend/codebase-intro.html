@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Li Gangwei, Louis Lor">
+        <link rel="canonical" href="https://nova35.gitlab.io/novaweb/v2/developer-manual/backend/codebase-intro.html">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Introduction to the Nova Codebase(Backend) - Nova Developer Manual</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">Nova Developer Manual</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../index.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Introduction</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../intro/domains.html" class="dropdown-item">Domains</a>
+</li>
+                                    
+<li>
+    <a href="../intro/repos.html" class="dropdown-item">Repositories</a>
+</li>
+                                    
+<li>
+    <a href="../intro/repo-migration.html" class="dropdown-item">Migrating Repositories</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Backend</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Deployment Procedures(Backend)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="deployment/prerequisites.html" class="dropdown-item">Prerequisites</a>
+</li>
+            
+<li>
+    <a href="deployment/deployment.html" class="dropdown-item">Deployment</a>
+</li>
+            
+<li>
+    <a href="deployment/post-deploy.html" class="dropdown-item">Post Deploy Setup</a>
+</li>
+            
+<li>
+    <a href="deployment/faqs.html" class="dropdown-item">FAQs</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="serverless-intro.html" class="dropdown-item">Introduction to the Serverless Framework</a>
+</li>
+                                    
+<li>
+    <a href="codebase-intro.html" class="dropdown-item active" aria-current="page">Introduction to the Nova Codebase(Backend)</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Data Deep Dive</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="deepdive/dynamo-basics.html" class="dropdown-item">DynamoDB Basics</a>
+</li>
+            
+<li>
+    <a href="deepdive/database-structure.html" class="dropdown-item">Nova's Database Structure</a>
+</li>
+            
+<li>
+    <a href="deepdive/data-schema.html" class="dropdown-item">Data Schema</a>
+</li>
+            
+<li>
+    <a href="deepdive/storage-classes.html" class="dropdown-item">Storage Classes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Analytics</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="analytics/intro.html" class="dropdown-item">Intro</a>
+</li>
+            
+<li>
+    <a href="analytics/heartbeats.html" class="dropdown-item">Heartbeats</a>
+</li>
+            
+<li>
+    <a href="analytics/redis-data-usage.html" class="dropdown-item">Redis Data Usage</a>
+</li>
+            
+<li>
+    <a href="analytics/aggregation.html" class="dropdown-item">Aggregation</a>
+</li>
+            
+<li>
+    <a href="analytics/metrics.html" class="dropdown-item">Metrics</a>
+</li>
+            
+<li>
+    <a href="analytics/issues.html" class="dropdown-item">Issues</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Frontend</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../frontend/prerequisites.html" class="dropdown-item">Prerequisites</a>
+</li>
+                                    
+<li>
+    <a href="../frontend/admin-panel.html" class="dropdown-item">Admin Panel</a>
+</li>
+                                    
+<li>
+    <a href="../frontend/event-viewer.html" class="dropdown-item">Event Viewer</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Extensions</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="../frontend/extension-poll.html" class="dropdown-item">Poll</a>
+</li>
+            
+<li>
+    <a href="../frontend/extension-survey.html" class="dropdown-item">Survey</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Deployment Environments</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../environments/intro.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../environments/deployment.html" class="dropdown-item">Deployment Procedures(Environments)</a>
+</li>
+                                    
+<li>
+    <a href="../environments/qol.html" class="dropdown-item">Deployment QOL</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Jenkins</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../jenkins/intro.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="../jenkins/management.html" class="dropdown-item">Managing Jenkins</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="serverless-intro.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="deepdive/dynamo-basics.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#introduction-to-the-nova-codebasebackend" class="nav-link">Introduction to the Nova Codebase(Backend)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="introduction-to-the-nova-codebasebackend">Introduction to the Nova Codebase(Backend)</h2>
+<hr />
+<h3 id="rough-outline">Rough Outline</h3>
+<p>The codebase can generally be split into 4 levels of abstraction.</p>
+<p>They are:</p>
+<ul>
+<li>Business<ul>
+<li>Easy to read</li>
+<li>Business logic only</li>
+<li>Calls Facade/Storage level modules</li>
+</ul>
+</li>
+<li>Facade<ul>
+<li>Easy to read with some business domain knowledge</li>
+<li>Consolidates multiple Storage level operations + reusable logic</li>
+<li>Calls Storage level modules</li>
+</ul>
+</li>
+<li>Storage<ul>
+<li>Harder to read without a deeper understanding of business logic</li>
+<li>Your main gateway of interaction with DynamoDB, and in some cases, Redis</li>
+<li>Calls integration level modules</li>
+</ul>
+</li>
+<li>Integration<ul>
+<li>Very hard to read without AWS resource specific knowledge</li>
+<li>Lower level</li>
+<li>Calls third party sdks, mainly integrates with AWS resources.</li>
+</ul>
+</li>
+</ul>
+<h3 id="business-level">Business Level</h3>
+<p>Example of a business level function:</p>
+<pre><code class="language-js">export async function handler(event, context) {
+    const {email, password} = JSON.parse(event.body);
+    if(!email || !password) {
+        return failure(ErrorResponse.MISSING_CREDENTIAL);
+    }
+
+    const sanitizedEmail = email.toLowerCase().trim();
+    const cred = await adminStorage.tryGetCredential(sanitizedEmail);
+    if(!cred) {
+        return failure(ErrorResponse.INVALID_CREDENTIAL);
+    }
+
+    const {userId} = cred;
+
+    const fiveDays = 1000 * 60 * 60 * 24 * 5;
+
+    if(await adminStorage.matchPassword(userId, password)) {
+        const session = await StorageFacade.invalidateAndCreateSession(userId, fiveDays);
+        const profile = await adminStorage.getProfile(userId);
+        return success({
+            profile,
+            session
+        });
+    } else {
+        return failure(ErrorResponse.INVALID_CREDENTIAL);
+    }
+}
+</code></pre>
+<p>The name of the function has been deliberately removed, but can you guess what this function does?</p>
+<p>Most people can probably guess with a pretty high accuracy the purpose of this function, even non
+programmers.</p>
+<p>It is because this is solely declarative, written in plain English, with little to no black magic.</p>
+<h3 id="facade-level">Facade Level</h3>
+<p>A simplified excerpt of the <code>StorageFacade</code> that was introduced earlier.</p>
+<pre><code class="language-js">export default class StorageFacade {
+    static async createAdminUser(email, password, firstName, lastName, role, credType) {
+        const sanitizedEmail = email.toLowerCase().trim();
+        const profile = AdminFactory.getNewProfile(sanitizedEmail, firstName, lastName, role);
+        const {userId} = profile;
+        return await Promise.all([
+            adminStorage.putProfile(userId, profile),
+            adminStorage.putCredential(userId, email, credType),
+            adminStorage.setPassword(userId, password)
+        ]);
+    }
+}
+</code></pre>
+<p>Still relatively readable.</p>
+<h3 id="storage-level">Storage Level</h3>
+<p>A simplified excerpt of <code>AdminStorage</code> that both the <code>login</code> function and <code>StorageFacade</code> uses.</p>
+<pre><code class="language-js">class AdminStorage extends CompositeStorage {
+    //.... omitted
+    async putProfile(userId, record) {
+        return await this.putSingleton(userId, this.#profileKey, record).then(cleanUpDbFields);
+    }
+
+    async getProfile(userId) {
+        return this.getSingleton(userId, this.#profileKey).then(cleanUpDbFields);
+    }
+
+    async putCredential(userId, identifier, credType) {
+        if(await this.credentialExists(identifier)) {
+            throw &quot;Trying to put a duplicate credential record!&quot;;
+        }
+        return super.putToCollection(userId, {
+            userId,
+            identifier,
+            credType
+        }, this.#credentialKey, identifier).then(cleanUpDbFields);
+    }
+
+    async tryGetCredential(identifier) {
+        const creds = await DynamoDB.queryIndex(this.table, reverseIndex, {[this.sortName]: this.genKey(this.#credentialKey, identifier)});
+        if(creds.length &gt; 0) {
+            return cleanUpDbFields(creds[0]);
+        } else {
+            return null;
+        }
+    }
+
+    //.... omitted
+}
+</code></pre>
+<p>You may have noticed immediately that, readability dropped by quite a bit.</p>
+<p>Understanding a <code>Storage</code> class requires knowing how <code>DynamoDB</code> stores data, what our concept of
+a <code>singleton</code> and a <code>collection</code> is, and what <code>Local</code> and <code>Global Secondary Indexes</code> are and how
+they work.</p>
+<p>It is not recommended for newcomers to immediately start creating or modifying a <code>Storage</code> class.</p>
+<p>A separate entry will be written on our data structure and DynamoDB fundamentals.  </p>
+<h3 id="integration">Integration</h3>
+<p>These classes deal with integration with AWS/other 3rd party services.</p>
+<p>Excerpt from the <code>DDBClient</code> class.</p>
+<pre><code class="language-ts">export class DDBClient {
+    // ...much omitted
+    async get(key: any, projection?: Projections, consistent?: boolean): Promise&lt;any&gt; {
+        const param: any = {
+            TableName: this.table,
+            Key: key,
+            ConsistentRead: consistent
+        };
+        const builder = new ExpressionBuilder();
+        if(projection) {
+            projectionPaths2Expression(projection, builder);
+        }
+        Object.assign(param, builder.build());
+        return docClient.get(param).promise().then(res =&gt; res.Item);
+    }
+
+    async update(key: any, action: UpdateAction, conditions?: Conditions): Promise&lt;any&gt; {
+        const param: any = {
+            TableName: this.table,
+            Key: key,
+            ReturnValues: &quot;ALL_NEW&quot;
+        };
+        const builder = new ExpressionBuilder();
+        action.addToBuilder(builder);
+        if(conditions) {
+            conditions.addToBuilder(builder)
+        }
+        Object.assign(param, builder.build());
+        return docClient.update(param).promise().then(res =&gt; res.Attributes).catch(e =&gt; {
+            if(e.code === &quot;ConditionalCheckFailedException&quot;) {
+                return null;
+            }
+            throw e;
+        });
+    }
+
+    async batchWrite(items: any[], recursive: boolean = true): Promise&lt;BatchWriteResult&gt; {
+        return this.batch(items, [], recursive);
+    }
+
+    async batchDelete(keys: any[], recursive: boolean = true) {
+        return this.batch([], keys, recursive);
+    }
+
+    async batch(items: any[], delKeys: any[], recursive: boolean): Promise&lt;BatchResult&gt; {
+        const result: BatchResult = {
+            unprocessedWrites: [],
+            unprocessedDeletes: []
+        };
+
+        const requests: any[] = [...items.map(i =&gt; ({
+            PutRequest: {Item: i}
+        })), ...delKeys.map(k =&gt; ({
+            DeleteRequest: {Key: k}
+        }))];
+
+        do {
+            const removed = requests.splice(0, 25);
+            const output = await docClient.batchWrite({
+                RequestItems: {
+                    [this.table]: removed
+                }
+            }).promise();
+            if(output.UnprocessedItems &amp;&amp; output.UnprocessedItems[this.table]) {
+                for(const item of output.UnprocessedItems[this.table]) {
+                    if(item.PutRequest) {
+                        result.unprocessedWrites.push(item.PutRequest.Item);
+                    } else if(item.DeleteRequest) {
+                        result.unprocessedDeletes.push(item.DeleteRequest.Key);
+                    }
+                }
+            }
+        } while(recursive &amp;&amp; requests.length &gt; 0);
+
+        if(requests.length &gt; 0) {
+            for(const request of requests) {
+                if(request.PutRequest) {
+                    result.unprocessedWrites.push(request.PutRequest.Item);
+                } else if(request.DeleteRequest) {
+                    result.unprocessedDeletes.push(request.DeleteRequest.Key);
+                }
+            }
+        }
+
+        return result;
+    }
+}
+</code></pre>
+<p>Needless to say, readability is very low without intimate knowledge of how <code>AWS-SDK</code> works and the
+syntax of a <code>DynamoDB</code> operation.</p>
+<p>These topics are out of the scope of this manual.</p>
+<p>Official references:</p>
+<p><a href="https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/DynamoDB/DocumentClient.html" target="_blank">AWS JS SDK</a></p>
+<p><a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.html" target="_blank">DynamoDB Expressions</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

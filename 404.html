@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="Li Gangwei, Louis Lor">
+        
+        <link rel="shortcut icon" href="/novaweb/v2/developer-manual/img/favicon.ico">
+        <title>Nova Developer Manual</title>
+        <link href="/novaweb/v2/developer-manual/css/bootstrap.min.css" rel="stylesheet">
+        <link href="/novaweb/v2/developer-manual/css/fontawesome.min.css" rel="stylesheet">
+        <link href="/novaweb/v2/developer-manual/css/brands.min.css" rel="stylesheet">
+        <link href="/novaweb/v2/developer-manual/css/solid.min.css" rel="stylesheet">
+        <link href="/novaweb/v2/developer-manual/css/v4-font-face.min.css" rel="stylesheet">
+        <link href="/novaweb/v2/developer-manual/css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="/novaweb/v2/developer-manual/index.html">Nova Developer Manual</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="/novaweb/v2/developer-manual/index.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Introduction</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="/novaweb/v2/developer-manual/intro/domains.html" class="dropdown-item">Domains</a>
+</li>
+                                    
+<li>
+    <a href="/novaweb/v2/developer-manual/intro/repos.html" class="dropdown-item">Repositories</a>
+</li>
+                                    
+<li>
+    <a href="/novaweb/v2/developer-manual/intro/repo-migration.html" class="dropdown-item">Migrating Repositories</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Backend</a>
+                                <ul class="dropdown-menu">
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Deployment Procedures(Backend)</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="/novaweb/v2/developer-manual/backend/deployment/prerequisites.html" class="dropdown-item">Prerequisites</a>
+</li>
+            
+<li>
+    <a href="/novaweb/v2/developer-manual/backend/deployment/deployment.html" class="dropdown-item">Deployment</a>
+</li>
+            
+<li>
+    <a href="/novaweb/v2/developer-manual/backend/deployment/post-deploy.html" class="dropdown-item">Post Deploy Setup</a>
+</li>
+            
+<li>
+    <a href="/novaweb/v2/developer-manual/backend/deployment/faqs.html" class="dropdown-item">FAQs</a>
+</li>
+    </ul>
+  </li>
+                                    
+<li>
+    <a href="/novaweb/v2/developer-manual/backend/serverless-intro.html" class="dropdown-item">Introduction to the Serverless Framework</a>
+</li>
+                                    
+<li>
+    <a href="/novaweb/v2/developer-manual/backend/codebase-intro.html" class="dropdown-item">Introduction to the Nova Codebase(Backend)</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Data Deep Dive</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="/novaweb/v2/developer-manual/backend/deepdive/dynamo-basics.html" class="dropdown-item">DynamoDB Basics</a>
+</li>
+            
+<li>
+    <a href="/novaweb/v2/developer-manual/backend/deepdive/database-structure.html" class="dropdown-item">Nova's Database Structure</a>
+</li>
+            
+<li>
+    <a href="/novaweb/v2/developer-manual/backend/deepdive/data-schema.html" class="dropdown-item">Data Schema</a>
+</li>
+            
+<li>
+    <a href="/novaweb/v2/developer-manual/backend/deepdive/storage-classes.html" class="dropdown-item">Storage Classes</a>
+</li>
+    </ul>
+  </li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Analytics</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="/novaweb/v2/developer-manual/backend/analytics/intro.html" class="dropdown-item">Intro</a>
+</li>
+            
+<li>
+    <a href="/novaweb/v2/developer-manual/backend/analytics/heartbeats.html" class="dropdown-item">Heartbeats</a>
+</li>
+            
+<li>
+    <a href="/novaweb/v2/developer-manual/backend/analytics/redis-data-usage.html" class="dropdown-item">Redis Data Usage</a>
+</li>
+            
+<li>
+    <a href="/novaweb/v2/developer-manual/backend/analytics/aggregation.html" class="dropdown-item">Aggregation</a>
+</li>
+            
+<li>
+    <a href="/novaweb/v2/developer-manual/backend/analytics/metrics.html" class="dropdown-item">Metrics</a>
+</li>
+            
+<li>
+    <a href="/novaweb/v2/developer-manual/backend/analytics/issues.html" class="dropdown-item">Issues</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Frontend</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="/novaweb/v2/developer-manual/frontend/prerequisites.html" class="dropdown-item">Prerequisites</a>
+</li>
+                                    
+<li>
+    <a href="/novaweb/v2/developer-manual/frontend/admin-panel.html" class="dropdown-item">Admin Panel</a>
+</li>
+                                    
+<li>
+    <a href="/novaweb/v2/developer-manual/frontend/event-viewer.html" class="dropdown-item">Event Viewer</a>
+</li>
+                                    
+  <li class="dropdown-submenu">
+    <a href="#" class="dropdown-item">Extensions</a>
+    <ul class="dropdown-menu">
+            
+<li>
+    <a href="/novaweb/v2/developer-manual/frontend/extension-poll.html" class="dropdown-item">Poll</a>
+</li>
+            
+<li>
+    <a href="/novaweb/v2/developer-manual/frontend/extension-survey.html" class="dropdown-item">Survey</a>
+</li>
+    </ul>
+  </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Deployment Environments</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="/novaweb/v2/developer-manual/environments/intro.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="/novaweb/v2/developer-manual/environments/deployment.html" class="dropdown-item">Deployment Procedures(Environments)</a>
+</li>
+                                    
+<li>
+    <a href="/novaweb/v2/developer-manual/environments/qol.html" class="dropdown-item">Deployment QOL</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Jenkins</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="/novaweb/v2/developer-manual/jenkins/intro.html" class="dropdown-item">Introduction</a>
+</li>
+                                    
+<li>
+    <a href="/novaweb/v2/developer-manual/jenkins/management.html" class="dropdown-item">Managing Jenkins</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+    <div class="row-fluid">
+      <div id="main-content" class="span12">
+        <h1 id="404-page-not-found" style="text-align: center">404</h1>
+        <p style="text-align: center"><strong>Page not found</strong></p>
+      </div>
+    </div>
+
+
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="/novaweb/v2/developer-manual/js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "/novaweb/v2/developer-manual/",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="/novaweb/v2/developer-manual/js/base.js"></script>
+        <script src="/novaweb/v2/developer-manual/search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
